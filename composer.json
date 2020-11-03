@@ -3,7 +3,6 @@
   "description": "An easy to use hooks library for managing events and filters.",
   "homepage": "https://github.com/bayfrontmedia/php-hooks",
   "license" : "MIT",
-  "version": "1.0.0",
   "type": "library",
   "keywords": [
     "php",
@@ -28,7 +27,7 @@
   ],
   "require": {
     "php": ">=7.1.0",
-    "bayfrontmedia/php-array-helpers": "^1.0.0"
+    "bayfrontmedia/php-array-helpers": "^1.0.1"
   },
   "autoload": {
     "psr-4": {

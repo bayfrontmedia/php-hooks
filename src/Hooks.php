@@ -9,20 +9,13 @@
 namespace Bayfront\Hooks;
 
 use Bayfront\ArrayHelpers\Arr;
-use Exception;
 
 class Hooks
 {
 
     public function __destruct()
     {
-
-        try {
-            $this->doEvent('destruct');
-        } catch (EventException $e) {
-            die($e->getMessage());
-        }
-
+        $this->doEvent('destruct');
     }
 
     /**
@@ -224,8 +217,6 @@ class Hooks
      * @param mixed $arg (Optional additional argument(s) to be passed to the functions hooked to the event)
      *
      * @return void
-     *
-     * @throws EventException
      */
 
     public function doEvent(string $name, ...$arg): void
@@ -239,15 +230,7 @@ class Hooks
 
             foreach ($events as $event) {
 
-                try {
-
-                    call_user_func($event['function'], $arg);
-
-                } catch (Exception $e) {
-
-                    throw new EventException('Unable to execute event (always)');
-
-                }
+                call_user_func($event['function'], $arg);
 
             }
 
@@ -265,15 +248,7 @@ class Hooks
 
         foreach ($events as $event) {
 
-            try {
-
-                call_user_func_array($event['function'], $arg);
-
-            } catch (Exception $e) {
-
-                throw new EventException('Unable to execute event (' . $name . ')');
-
-            }
+            call_user_func_array($event['function'], $arg);
 
         }
 
@@ -391,8 +366,6 @@ class Hooks
      * @param mixed $value (Original value to be filtered)
      *
      * @return mixed (Filtered value)
-     *
-     * @throws FilterException
      */
 
     public function doFilter(string $name, $value)
@@ -408,15 +381,7 @@ class Hooks
 
         foreach ($filters as $filter) {
 
-            try {
-
-                $value = call_user_func_array($filter['function'], [$value]);
-
-            } catch (Exception $e) {
-
-                throw new FilterException('Unable to execute filter (' . $name . ')');
-
-            }
+            $value = call_user_func_array($filter['function'], [$value]);
 
         }
 

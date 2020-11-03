@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "730eac356df0dd43d985adaa622c2700",
+    "content-hash": "a61a88bec5a65604ff46c6da05233e3a",
     "packages": [
         {
             "name": "bayfrontmedia/php-array-helpers",
@@ -50,6 +50,16 @@
                 "helpers",
                 "php"
             ],
+            "support": {
+                "issues": "https://github.com/bayfrontmedia/php-array-helpers/issues",
+                "source": "https://github.com/bayfrontmedia/php-array-helpers/tree/master"
+            },
+            "funding": [
+                {
+                    "url": "https://www.patreon.com/bayfrontmedia",
+                    "type": "patreon"
+                }
+            ],
             "time": "2020-08-02T22:59:39+00:00"
         }
     ],
@@ -62,5 +72,6 @@
     "platform": {
         "php": ">=7.1.0"
     },
-    "platform-dev": []
+    "platform-dev": [],
+    "plugin-api-version": "2.0.0"
 }

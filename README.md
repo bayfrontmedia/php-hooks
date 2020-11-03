@@ -261,22 +261,10 @@ Execute queued hooks for a given event in order of priority.
 
 - (void)
 
-**Throws:**
-
-- `Bayfront\Hooks\EventException`
-
 **Example:**
 
 ```
-use Bayfront\Hooks\EventException;
-
-try {
-
-    $hooks->doEvent('name', 'John');
-
-} catch (EventException $e) {
-    die($e->getMessage());
-}
+$hooks->doEvent('name', 'John');
 ```
 
 <hr />
@@ -478,20 +466,8 @@ Filters value through queued filters in order of priority.
 
 - (mixed): Filtered value
 
-**Throws:**
-
-- `Bayfront\Hooks\FilterException`
-
 **Example:**
 
 ```
-use Bayfront\Hooks\FilterException;
-
-try {
-
-    echo $hooks->doFilter('name', 'John');
-
-} catch (FilterException $e) {
-    die($e->getMessage());
-}
+echo $hooks->doFilter('name', 'John');
 ```
