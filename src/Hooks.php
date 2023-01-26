@@ -1,10 +1,4 @@
 <?php
-/**
- * @package php-hooks
- * @link https://github.com/bayfrontmedia/php-hooks
- * @author John Robinson <john@bayfrontmedia.com>
- * @copyright 2020 Bayfront Media
- */
 
 namespace Bayfront\Hooks;
 
@@ -29,7 +23,7 @@ class Hooks
      * @return string
      */
 
-    private function _makeId(string $name, $function): string
+    private function _makeId(string $name, mixed $function): string
     {
 
         if (is_string($function)) {
@@ -104,7 +98,7 @@ class Hooks
      * ############################################################
      */
 
-    private static $events = []; // Hooked events
+    private static array $events = []; // Hooked events
 
     /**
      * Adds a hook for a given event name
@@ -260,7 +254,7 @@ class Hooks
      * ############################################################
      */
 
-    private static $filters = []; // Hooked filters
+    private static array $filters = []; // Hooked filters
 
     /**
      * Adds a hook for a given filter name
@@ -368,7 +362,7 @@ class Hooks
      * @return mixed (Filtered value)
      */
 
-    public function doFilter(string $name, $value)
+    public function doFilter(string $name, mixed $value): mixed
     {
 
         if (!isset(self::$filters[$name])) { // No filters exist, return original value
