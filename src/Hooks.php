@@ -112,12 +112,12 @@ class Hooks
      *
      * @param string $name (Name of event)
      * @param callable $function
-     * @param int $priority (Hooks will be executed by order of priority in descending order)
+     * @param int $priority (Hooks will be executed by order of priority in ascending order)
      *
      * @return void
      */
 
-    public function addEvent(string $name, callable $function, int $priority = 5): void
+    public function addEvent(string $name, callable $function, int $priority = 10): void
     {
 
         self::$events[$name][$this->_makeId($name, $function)] = [
@@ -220,7 +220,7 @@ class Hooks
 
         if (isset(self::$events['always'])) {
 
-            $events = Arr::multisort(self::$events['always'], 'priority', true); // Sort descending by priority
+            $events = Arr::multisort(self::$events['always'], 'priority'); // Sort ascending by priority
 
             foreach ($events as $event) {
 
@@ -238,7 +238,7 @@ class Hooks
 
         // -------------------- Execute named event --------------------
 
-        $events = Arr::multisort(self::$events[$name], 'priority', true); // Sort descending by priority
+        $events = Arr::multisort(self::$events[$name], 'priority'); // Sort ascending by priority
 
         foreach ($events as $event) {
 
@@ -261,12 +261,12 @@ class Hooks
      *
      * @param string $name (Name of filter)
      * @param callable $function
-     * @param int $priority (Filters will be executed in order of priority in descending order)
+     * @param int $priority (Filters will be executed in order of priority in ascending order)
      *
      * @return void
      */
 
-    public function addFilter(string $name, callable $function, int $priority = 5): void
+    public function addFilter(string $name, callable $function, int $priority = 10): void
     {
 
         self::$filters[$name][$this->_makeId($name, $function)] = [
@@ -371,7 +371,7 @@ class Hooks
 
         }
 
-        $filters = Arr::multisort(self::$filters[$name], 'priority', true); // Sort descending by priority
+        $filters = Arr::multisort(self::$filters[$name], 'priority'); // Sort ascending by priority
 
         foreach ($filters as $filter) {
 

@@ -73,7 +73,8 @@ Adds a hook for a given event name.
 
 - `$name` (string): Name of event
 - `$function` (callable)
-- `$priority = 5` (int): Hooks will be executed by order of priority in descending order
+- `$priority = 10` (int): Hooks will be executed by order of priority in ascending order
+(lower numbers = earlier execution)
 
 Reserved names:
 
@@ -282,7 +283,8 @@ Adds a hook for a given filter name.
 
 - `$name` (string): Name of filter
 - `$function` (callable)
-- `$priority = 5` (int): Filters will be executed in order of priority in descending order
+- `$priority = 10` (int): Filters will be executed in order of priority in ascending order 
+(lower numbers = earlier execution)
 
 **Returns:**
 

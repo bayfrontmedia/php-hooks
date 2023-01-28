@@ -12,11 +12,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `Fixed` for any bug fixes.
 - `Security` in case of vulnerabilities
 
-## [2.0.0] - 2023.01.26
+## [2.0.0] - 2023.01.27
 
 ### Added
 
 - Added support for PHP 8.
+
+### Changed
+
+- Updated default priority to `10`
+- Updated priority to order by `ascending`
 
 ## [1.1.0] - 2020.11.03
 
