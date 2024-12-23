@@ -148,7 +148,7 @@ class Hooks
      * @return array
      */
 
-    public function getEvents(string $name = NULL): array
+    public function getEvents(?string $name = NULL): array
     {
         return $this->_getHooks('events', $name);
     }
@@ -297,7 +297,7 @@ class Hooks
      * @return array
      */
 
-    public function getFilters(string $name = NULL): array
+    public function getFilters(?string $name = NULL): array
     {
         return $this->_getHooks('filters', $name);
     }
